@@ -43,6 +43,24 @@
 
 ---
 
+## 📸 项目展示
+
+<div align="center">
+
+### 🏗️ 原版仓库概览
+
+![Aurora原版仓库](images/aurora-main-repo.png)
+*原版Aurora仓库 - 包含完整的后端系统和用户管理功能*
+
+### 📁 项目文件结构
+
+![Aurora项目结构](images/aurora-file-structure.png)
+*完整的项目文件结构 - 展示Aurora的技术架构*
+
+</div>
+
+---
+
 ## 🌟 Aurora背后的故事
 
 > *"窗外是沉默的校园，窗内是我在实验室里噼里啪啦的键盘声，和屏幕上那个渐渐成型的身影——"*
