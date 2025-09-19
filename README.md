@@ -307,7 +307,7 @@ aurora-ai-website/
 ├── 📁 js/                        # 前端脚本
 │   ├── 📄 auth-manager.js        # 认证管理器
 │   ├── 📄 aurora-api.js          # API调用
-│   └── 📄 deepseek-api.js        # DeepSeek集成
+│   └── 📄 (已移除)               # DeepSeek API已移除以保护隐私
 ├── 📄 index.html                 # 首页
 ├── 📄 login.html                 # 登录页
 ├── 📄 register.html              # 注册页

@@ -70,30 +70,18 @@
         <div id="message-result" class="result"></div>
     </div>
 
-    <script src="js/deepseek-api.js"></script>
+    <!-- DeepSeek API已移除以保护隐私 -->
     <script>
         function checkApiConfig() {
             const resultDiv = document.getElementById('config-result');
             
             try {
-                if (window.deepSeekAPI) {
-                    const isValid = window.deepSeekAPI.isApiKeyValid();
-                    const apiKey = window.deepSeekAPI.apiKey;
-                    const apiUrl = window.deepSeekAPI.apiUrl;
-                    const model = window.deepSeekAPI.model;
-                    
-                    resultDiv.innerHTML = `
-                        <strong>API配置状态：</strong><br>
-                        API密钥: ${apiKey ? apiKey.substring(0, 10) + '...' : '未设置'}<br>
-                        API地址: ${apiUrl}<br>
-                        模型: ${model}<br>
-                        密钥有效: ${isValid ? '✅ 是' : '❌ 否'}
-                    `;
-                    resultDiv.className = isValid ? 'result success' : 'result error';
-                } else {
-                    resultDiv.innerHTML = '<strong>❌ deepSeekAPI 未加载</strong>';
-                    resultDiv.className = 'result error';
-                }
+                resultDiv.innerHTML = `
+                    <strong>⚠️ DeepSeek API 已移除</strong><br>
+                    为了保护API密钥隐私，DeepSeek API相关功能已从演示版本中移除。<br>
+                    完整版本包含完整的API集成功能。
+                `;
+                resultDiv.className = 'result warning';
             } catch (error) {
                 resultDiv.innerHTML = `<strong>❌ 检查失败:</strong> ${error.message}`;
                 resultDiv.className = 'result error';
@@ -105,22 +93,12 @@
             resultDiv.innerHTML = '正在测试连接...';
             
             try {
-                if (!window.deepSeekAPI) {
-                    throw new Error('deepSeekAPI 未加载');
-                }
-                
-                if (!window.deepSeekAPI.isApiKeyValid()) {
-                    throw new Error('API密钥无效');
-                }
-                
-                // 发送一个简单的测试消息
-                const response = await window.deepSeekAPI.sendMessage('测试连接', 'test-session');
-                
                 resultDiv.innerHTML = `
-                    <strong>✅ 连接成功！</strong><br>
-                    响应: ${response}
+                    <strong>⚠️ API连接测试不可用</strong><br>
+                    DeepSeek API已从演示版本中移除以保护隐私。<br>
+                    完整版本支持完整的API连接测试功能。
                 `;
-                resultDiv.className = 'result success';
+                resultDiv.className = 'result warning';
                 
             } catch (error) {
                 resultDiv.innerHTML = `
@@ -145,14 +123,12 @@
             resultDiv.innerHTML = '正在发送消息...';
             
             try {
-                const response = await window.deepSeekAPI.sendMessage(message, 'test-session');
-                
                 resultDiv.innerHTML = `
-                    <strong>✅ 消息发送成功！</strong><br>
-                    用户消息: ${message}<br>
-                    AI回复: ${response}
+                    <strong>⚠️ 消息发送功能不可用</strong><br>
+                    DeepSeek API已从演示版本中移除以保护隐私。<br>
+                    完整版本支持完整的AI对话功能。
                 `;
-                resultDiv.className = 'result success';
+                resultDiv.className = 'result warning';
                 
             } catch (error) {
                 resultDiv.innerHTML = `
